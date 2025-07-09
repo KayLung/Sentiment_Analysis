@@ -63,14 +63,14 @@ class MultiHeadAttention(nn.Module):
 
         return context_vec
 
-torch.manual_seed(123) #manual_seed：这是 PyTorch 中的一个函数，用于设置全局随机数生成器的种子。通过设置种子，可以确保每次运行代码时生成的随机数序列是相同的。
-# 确保可重复性：在深度学习中，许多操作（如权重初始化、数据增强等）依赖于随机数生成器。通过设置固定的种子，可以确保每次运行代码时这些随机操作的结果是相同的，从而便于调试和验证。
+# torch.manual_seed(123) #manual_seed：这是 PyTorch 中的一个函数，用于设置全局随机数生成器的种子。通过设置种子，可以确保每次运行代码时生成的随机数序列是相同的。
+# # 确保可重复性：在深度学习中，许多操作（如权重初始化、数据增强等）依赖于随机数生成器。通过设置固定的种子，可以确保每次运行代码时这些随机操作的结果是相同的，从而便于调试和验证。
 
-batch_size, context_length, d_in = batch.shape
-d_out = 2
-mha = MultiHeadAttention(d_in, d_out, context_length, 0.0, num_heads=2)
+# batch_size, context_length, d_in = batch.shape
+# d_out = 2
+# mha = MultiHeadAttention(d_in, d_out, context_length, 0.0, num_heads=2)
 
-context_vecs = mha(batch)
+# context_vecs = mha(batch)
 
-print(context_vecs)
-print("context_vecs.shape:", context_vecs.shape)
+# print(context_vecs)
+# print("context_vecs.shape:", context_vecs.shape)
